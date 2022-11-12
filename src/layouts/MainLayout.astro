@@ -23,6 +23,18 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
 	<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+	<script type="text/javascript">
+	  algoliasearchNetlify({
+		appId: 'A2DXT7ZK6K',
+		apiKey: 'a00966db4bc83b15e12f11bacad23f04',
+		siteId: 'b899a3ba-facb-4b19-9831-a989217b9ac8',
+		branch: 'main',
+		selector: 'div#search',
+	  });
+	</script>
+	<div id="search"></div>
 		<HeadCommon />
 		<HeadSEO frontmatter={frontmatter} canonicalUrl={canonicalURL} />
 		<title>
